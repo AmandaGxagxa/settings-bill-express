@@ -1,5 +1,5 @@
 # Introduction to creating web apps with ExpressJS
-
+Travis badge : [![Build Status](https://travis-ci.org/AmandaGxagxa/settings-bill-express.svg?branch=master)](https://travis-ci.org/AmandaGxagxa/settings-bill-express)
 In this document we will explore how to create web applications with [ExpressJS](http://http://expressjs.com/).
 
 Web Applications are programs that clients can connect to remotely access using a Web Browser. They are started up on a port number, which forms part of the URL to the server.
