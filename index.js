@@ -1,4 +1,5 @@
 var express = require('express');
+var moment = require('moment');
 const exphbs = require('express-handlebars');
 const BillSettingsUpdates = require('./bill-settings');
 const bodyParser = require('body-parser')
@@ -13,7 +14,10 @@ const billS = BillSettingsUpdates();
 //allows to use css && js file
 app.use(express.static("public"));
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  helpers:{"ago": function () {
+    return moment(this.ago).fromNow();
+  }}
 }));
 app.set('view engine', 'handlebars');
 // requiring moment.js to be used

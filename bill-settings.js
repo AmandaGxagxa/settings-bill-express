@@ -34,10 +34,10 @@ module.exports = function BillSettingsUpdates() {
 
     //accessers|| getters
     function getStampMap() {
-      for (var i = 0; i < stampMap.length; i++) {
-        var times = moment(stampMap[i].when).fromNow();
-        stampMap[i].ago = times
-      }
+      // for (var i = 0; i < stampMap.length; i++) {
+      //   var times = moment(stampMap[i].when).fromNow();
+      //   stampMap[i].ago = times
+      // }
       return stampMap;
     }
 
@@ -58,18 +58,22 @@ module.exports = function BillSettingsUpdates() {
     }
 
     function frOmNow(value) {
+
       var date = new Date();
+      var momnt = moment(date)
       if (value === "call") {
         stampMap.unshift({
           type: value,
-          price: getCallValue(),
-          when: date
+          price: getCostCall(),
+          when: date,
+          ago :momnt
         })
       } else if (value === "sms") {
         stampMap.unshift({
           type: value,
-          price: getSmsValue(),
-          when: date
+          price: getCostSms(),
+          when: date,
+          ago :momnt
         })
 
       }
