@@ -58,6 +58,14 @@ describe("The bill settings function", function() {
     var date = new Date();
     assert.equal(billSettingsUpdates.filteredCost("call")[0].type, 'call');
   });
+  it("should be able to return the value of the first type", function() {
+    var billSettingsUpdates = BillSettingsUpdates();
+    billSettingsUpdates.stamps("call");
+    billSettingsUpdates.stamps("call");
+    billSettingsUpdates.stamps("sms");
+    var date = new Date();
+    assert.equal(billSettingsUpdates.filteredCost("call")[0].type, 'call');
+  });
 
 
 })
